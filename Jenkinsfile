@@ -6,14 +6,10 @@ pipeline {
     stages {
         stage('Version verification') {
             when {
-                branch 'prod'
-            }
-            steps {
-                sh 'ng version'
-            }
-
-             when {
-                branch 'dev'
+                anyOf {
+                    branch 'prod'
+                    branch 'dev'
+                }
             }
             steps {
                 sh 'ng version'
@@ -22,14 +18,10 @@ pipeline {
 
         stage('Install dependencies') {
             when {
-                branch 'prod'
-            }
-            steps {
-                sh 'npm install'
-            }
-
-             when {
-                branch 'dev'
+                anyOf {
+                    branch 'prod'
+                    branch 'dev'
+                }
             }
             steps {
                 sh 'ng version'
@@ -37,15 +29,11 @@ pipeline {
         }
 
         stage('Lint tests') {
-            when {
-                branch 'prod'
-            }
-            steps {
-                sh 'ng lint'
-            }
-
-             when {
-                branch 'dev'
+           when {
+                anyOf {
+                    branch 'prod'
+                    branch 'dev'
+                }
             }
             steps {
                 sh 'ng version'
@@ -53,15 +41,11 @@ pipeline {
         }
 
         stage('Unit Tests') {
-            when {
-                branch 'prod'
-            }
-            steps {
-                sh 'ng test'
-            }
-
-             when {
-                branch 'dev'
+           when {
+                anyOf {
+                    branch 'prod'
+                    branch 'dev'
+                }
             }
             steps {
                 sh 'ng version'
@@ -70,14 +54,10 @@ pipeline {
 
         stage('Build application') {
             when {
-                branch 'prod'
-            }
-            steps {
-                sh 'ng build'
-            }
-
-             when {
-                branch 'dev'
+                anyOf {
+                    branch 'prod'
+                    branch 'dev'
+                }
             }
             steps {
                 sh 'ng version'
