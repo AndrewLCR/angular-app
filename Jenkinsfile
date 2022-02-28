@@ -12,7 +12,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ng version'
+                bat 'ng version'
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ng version'
+                bat 'ng version'
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ng version'
+                bat 'ng version'
             }
         }
 
@@ -48,7 +48,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ng version'
+                bat 'ng version'
             }
         }
 
@@ -60,7 +60,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ng version'
+                bat 'ng version'
             }
         }
     }
