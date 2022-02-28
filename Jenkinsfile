@@ -9,14 +9,14 @@ pipeline {
                 branch 'prod'
             }
             steps {
-                bat 'ng version'
+                sh 'ng version'
             }
 
              when {
                 branch 'dev'
             }
             steps {
-                bat 'ng version'
+                sh 'ng version'
             }
         }
 
@@ -25,14 +25,14 @@ pipeline {
                 branch 'prod'
             }
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
 
              when {
                 branch 'dev'
             }
             steps {
-                bat 'ng version'
+                sh 'ng version'
             }
         }
 
@@ -41,14 +41,14 @@ pipeline {
                 branch 'prod'
             }
             steps {
-                bat 'ng lint'
+                sh 'ng lint'
             }
 
              when {
                 branch 'dev'
             }
             steps {
-                bat 'ng version'
+                sh 'ng version'
             }
         }
 
@@ -57,14 +57,14 @@ pipeline {
                 branch 'prod'
             }
             steps {
-                bat 'ng test'
+                sh 'ng test'
             }
 
              when {
                 branch 'dev'
             }
             steps {
-                bat 'ng version'
+                sh 'ng version'
             }
         }
 
@@ -73,14 +73,14 @@ pipeline {
                 branch 'prod'
             }
             steps {
-                bat 'ng build'
+                sh 'ng build'
             }
 
              when {
                 branch 'dev'
             }
             steps {
-                bat 'ng version'
+                sh 'ng version'
             }
         }
     }
