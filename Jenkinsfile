@@ -11,6 +11,13 @@ pipeline {
             steps {
                 bat 'ng version'
             }
+
+             when {
+                branch 'dev'
+            }
+            steps {
+                bat 'ng version'
+            }
         }
 
         stage('Install dependencies') {
@@ -19,6 +26,13 @@ pipeline {
             }
             steps {
                 bat 'npm install'
+            }
+
+             when {
+                branch 'dev'
+            }
+            steps {
+                bat 'ng version'
             }
         }
 
@@ -29,6 +43,13 @@ pipeline {
             steps {
                 bat 'ng lint'
             }
+
+             when {
+                branch 'dev'
+            }
+            steps {
+                bat 'ng version'
+            }
         }
 
         stage('Unit Tests') {
@@ -38,6 +59,13 @@ pipeline {
             steps {
                 bat 'ng test'
             }
+
+             when {
+                branch 'dev'
+            }
+            steps {
+                bat 'ng version'
+            }
         }
 
         stage('Build application') {
@@ -46,6 +74,13 @@ pipeline {
             }
             steps {
                 bat 'ng build'
+            }
+
+             when {
+                branch 'dev'
+            }
+            steps {
+                bat 'ng version'
             }
         }
     }
